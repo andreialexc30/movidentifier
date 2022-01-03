@@ -1,0 +1,30 @@
+.searchQuery {
+    width: 50vw;
+    margin: 0 auto;
+
+    .section-heading {
+        color: $tan;
+        font-size: 2.5rem;
+        text-shadow: -2px 2px #373434;
+        display: flex;
+        align-items: center;
+
+        .heading-icon {
+            width: 45px;
+            margin-left: .35em;
+        }
+    }
+
+    .section-text {
+        color: $fff;
+        margin: 0;
+    }
+
+    &_input {
+        width: 100%;
+        margin: 1.25em 0;
+        padding: .65em;
+        border-radius: 15px;
+        border: none;
+    }
+}

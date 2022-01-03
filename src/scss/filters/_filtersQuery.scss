@@ -1,0 +1,16 @@
+.searchQuery_Filters-categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .Filters-categories--pill {
+        color: $fff;
+        border-radius: 90px;
+        border: none;
+        background-color: $msb;
+        padding: .5em;
+        margin: .15em;
+        width: 90px;
+        cursor: pointer;
+    }
+}

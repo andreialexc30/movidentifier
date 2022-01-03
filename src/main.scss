@@ -1,0 +1,15 @@
+/* Global page styling: color scheme, body, HTML elements, fonts */
+@import './scss/page_style/globals';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* Search Query Component */
+@import './scss/search_query/searchQuery';
+
+/* Filters Component */
+@import './scss/filters/filtersQuery';
+
+/* Movies Component  */
+@import './scss/movies/movies';
+
+/* MovieDetails Component */
+@import './scss/movie_details/movieDetails';

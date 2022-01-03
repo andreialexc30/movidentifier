@@ -1,0 +1,16 @@
+$dsb: hsl(246, 46, 37);
+$msb: hsl(239, 77, 70);
+$sy: hsl(45, 99, 49);
+$tan: hsl(34, 99, 47);
+$ogpt: hsl(22, 97, 48);
+$fff: hsl(0, 0%, 97%);
+$silverShade: hsl(0, 0%, 94%);
+$boxShadow: hsl(0, 0%, 20%);
+
+body {
+    width: 70vw;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    background-color: $dsb;
+}

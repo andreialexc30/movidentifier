@@ -1,0 +1,45 @@
+.movie-list {
+    display: grid;
+
+    &_info {
+        display: flex;
+        justify-content: space-between;
+
+        .movie-details_title,
+        .movie-details_director,
+        .movie-details_date {
+            margin: 0;
+        }
+
+        .movie-art {
+            width: 100%;
+            height: 100%;
+
+            &_img {
+                width: inherit;
+                height: inherit;
+            }
+        }
+
+        .movie-details {
+            padding: .5em;
+
+            .movie-details_title {
+                font-size: 1.85rem;
+            }
+
+            .movie-details_director {
+                font-size: 1.25rem;
+                margin: .35em 0;
+            }
+
+            .movie-details_date {
+                font-size: 1rem
+            }
+
+            .movie-details_synopsis {
+                width: 50vw;
+            }
+        }
+    }
+}
