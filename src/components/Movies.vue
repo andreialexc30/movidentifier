@@ -4,7 +4,11 @@
             We found the following movies
             <img src="../assets/check-green.svg" alt="" class="heading-icon">
         </h1>
-        <MovieDetails />
+        <main class="movie-list">
+            <MovieDetails />
+            <MovieDetails />
+            <MovieDetails />
+        </main>
     </section>
 </template>
 
