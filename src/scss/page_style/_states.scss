@@ -1,0 +1,12 @@
+.Filters-categories--pill:hover,
+.Filters-categories--pill:focus {
+    background-color: $hsb !important;
+}
+
+.searchQuery_input:focus-visible {
+    outline: 5px solid $tan;
+}
+
+.pill-selected {
+    background-color: $hsb !important;
+}

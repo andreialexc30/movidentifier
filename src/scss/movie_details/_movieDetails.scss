@@ -1,9 +1,10 @@
 .movie-list {
     display: grid;
 
-    &_info {
+    .movie-list_info {
         display: flex;
         justify-content: space-between;
+        border-bottom: 5px solid;
 
         .movie-details_title,
         .movie-details_director,
@@ -22,7 +23,7 @@
         }
 
         .movie-details {
-            padding: .5em;
+            padding: .5em 0 .5em 1em;
 
             .movie-details_title {
                 font-size: 1.85rem;
@@ -35,6 +36,21 @@
 
             .movie-details_date {
                 font-size: 1rem
+            }
+
+            .movie-details_genres {
+                padding: 0;
+                margin: .5em 0;
+                list-style: none;
+                display: flex;
+                grid-gap: .75em;
+
+                &-item {
+                    background-color: hsl(0, 0%, 71%);
+                    padding: .35em;
+                    border-radius: 5px;
+                    color: $fff;
+                }
             }
 
             .movie-details_synopsis {
