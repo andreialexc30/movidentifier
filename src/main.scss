@@ -1,5 +1,6 @@
-/* Global page styling: color scheme, body, HTML elements, fonts */
+/* Global page styling: color scheme, HTML elements, fonts */
 @import './scss/page_style/globals';
+@import './scss/page_style/states';
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 /* Search Query Component */
