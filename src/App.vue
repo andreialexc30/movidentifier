@@ -2,12 +2,20 @@
   <section class="searchQuery">
     <header class="header">
       <!-- App Name -->
-      <h1 class="section-heading">Movidentifier <img src="./assets/film-solid.svg" alt="" class="heading-icon"></h1>
+      <div class="header-details">
+        <h1 class="section-heading">Movidentifier <img src="./assets/film-solid.svg" alt="" class="heading-icon"></h1>
+        <h2 class="section-subheading">Navigate the web in search of a great movie</h2>
+      </div>
       <!-- Navigation TBA -->
-      <!-- <nav id="nav"></nav> -->
+      <!-- <nav id="nav">
+        <router-link></router-link>
+        <router-link></router-link>
+      </nav> -->
+      <button v-on:click="log" class="shopping_cart">
+        <img src="./assets/cart.svg" class="shopping_cart-icon"/>
+      </button>
     </header>
     <!-- Search for movies -->
-      <p class="section-text">Navigate the web in search of a great movie</p>
       <SearchQuery />
   </section>
   <Movies />
