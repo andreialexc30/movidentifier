@@ -10,3 +10,14 @@
 .pill-selected {
     background-color: $hsb !important;
 }
+
+.shopping_cart:focus,
+.shopping_cart:focus-visible,
+.shopping_cart:hover {
+    border-color: $tan !important;
+}
+
+.shopping_cart:hover .shopping_cart-icon {
+    transform: rotateY(0deg);
+    margin: 0;
+}
