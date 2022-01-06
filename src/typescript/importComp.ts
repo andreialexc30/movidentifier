@@ -3,5 +3,10 @@ import Movies from '../components/Movies.vue';
 
 export default {
     components: { SearchQuery, Movies },
-    name: 'App'
+    name: 'App',
+    methods: {
+        log() {
+            console.log('working')
+        }
+    }
 }
