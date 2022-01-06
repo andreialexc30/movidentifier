@@ -15,10 +15,31 @@
         .movie-art {
             width: 100%;
             height: 100%;
+            position: relative;
 
             &_img {
                 width: inherit;
                 height: inherit;
+            }
+
+            &_controls {
+                position: absolute;
+                top: 0;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                &-btn {
+                    width: auto;
+                    height: inherit;
+                    cursor: pointer;
+                    border: 1px;
+
+                    .control-btn_icon {
+                        width: 35px;
+                        height: auto;
+                    }
+                }
             }
         }
 
