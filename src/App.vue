@@ -1,4 +1,5 @@
 <template>
+  <Cart v-if="toggleCart" />
   <section class="searchQuery">
     <header class="header">
       <!-- App Name -->
@@ -11,8 +12,8 @@
         <router-link></router-link>
         <router-link></router-link>
       </nav> -->
-      <button v-on:click="log" class="shopping_cart">
-        <img src="./assets/cart.svg" class="shopping_cart-icon"/>
+      <button @click="toggleCartDisplay" class="shopping_cart-BTN">
+        <img src="./assets/cart.svg" class="shopping_cart-BTN-icon"/>
       </button>
     </header>
     <!-- Search for movies -->
