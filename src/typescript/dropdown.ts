@@ -3,12 +3,10 @@ export default {
         toggleDropdown() {
             const dropdown = document.querySelector('.dropdown_list');
             dropdown?.classList.toggle('dropdown_list-toggle');
-            this.fadeElements();
+            this.fadeElements(dropdown);
         },
-        fadeElements() {
-            console.log('hello!!')
+        fadeElements(dropdown: Element | null) {
             const categoryBtn = document.querySelectorAll('.Mobile-categories--pill');
-            const dropdown = document.querySelector('.dropdown_list')
             if(dropdown?.classList.contains('dropdown_list-toggle')) {
                 for(let i = 0; i < categoryBtn.length; i++) {
                     let multiplied: number = i * 100;
