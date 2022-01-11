@@ -17,10 +17,10 @@
       </button>
     </header>
     <!-- Search for movies -->
-      <SearchQuery />
+      <SearchQuery :searchMovie="searchMovie" />
   </section>
-  <Movies />
+  <Movies :movie="movie" />
   <!-- <router-view/> -->
 </template>
 
-<script src="./typescript/importComp.ts"></script>
+<script src="./typescript/api.ts"></script>
