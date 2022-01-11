@@ -30,15 +30,32 @@
         display: flex;
         flex-direction: column;
         padding: 2.5em;
+
+        &-wrapper {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 
     &_input {
         width: 100%;
         margin: 1.25em 0;
         padding: .65em;
-        border-radius: 15px;
-        border: none;
+        border: 1px solid #343434;
         align-self: center;
+    }
+
+    .input-submit_btn {
+        width: 15%;
+        border: none;
+        background-color: $dsb;
+        cursor: pointer;
+        padding: .7em;
+        align-self: center;
+        margin-left: .5em;
+        color: $fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 
     .shopping_cart-BTN {
