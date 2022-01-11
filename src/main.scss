@@ -14,3 +14,11 @@
 
 /* MovieDetails Component */
 @import './scss/movie_details/movieDetails';
+
+/* Cart and it's components */
+@import './scss/cart/cart';
+@import './scss/cart/movieCard';
+@import './scss/cart/sidebar';
+
+/* Responsive web design  */
+@import './scss/responsive_media/mobiledesign';

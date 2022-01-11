@@ -1,0 +1,26 @@
+.shopping-cart_details {
+    margin: 1.25em;
+
+    .movie-in-cart {
+        display: flex;
+        padding: 1.25em;
+
+        &_img {
+            width: 100%;
+            height: auto;
+
+            .cart_img-art {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &_details {
+            padding: 0 2.5em;
+        }
+    }
+
+    .movie-in-cart:not(:last-child) {
+        border-bottom: 2px solid;
+    }
+}

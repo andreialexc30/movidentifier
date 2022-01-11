@@ -1,0 +1,24 @@
+// Categories dropdown
+@media screen and (min-width: 300px) and (max-width: 400px) {
+    .searchQuery_Filters-categories {
+        display: none !important;
+    }
+
+    .mobile-category_dropdown {
+        display: flex !important;
+    }
+
+    .dropdown_list-toggle {
+        display: flex !important;
+        flex-direction: column;
+        grid-gap: .15em;
+    }
+
+    .Mobile-categories--pill {
+        opacity: 0;
+    }
+
+    .Mobile-categories--pill_unhide {
+        opacity: 1 !important;
+    }
+}
