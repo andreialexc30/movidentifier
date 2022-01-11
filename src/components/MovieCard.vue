@@ -1,7 +1,7 @@
 <template>
     <div class="movie-in-cart">
         <div class="movie-in-cart_img">
-            <img src="/" alt="movie">
+            <img src="../assets/temp.jpg" alt="movie" class="cart_img-art">
         </div>
         <div class="movie-in-cart_details">
             <h1 class="movie-in-cart_title">Movie Title</h1>
