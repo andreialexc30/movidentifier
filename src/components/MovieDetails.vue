@@ -13,15 +13,20 @@
                 </div>
             </div>
             <div class="movie-details">
-                <h1 class="movie-details_title">Title of Movie</h1>
-                <h2 class="movie-details_director">Name of Director</h2>
-                <h3 class="movie-details_date">01.01.2021</h3>
-                <ul class="movie-details_genres">
-                    <li class="movie-details_genres-item">Action</li>
+                <h1 class="movie-details_title">{{ movieTitle }}</h1>
+                <h2 class="movie-details_director">{{ movieDirector }}</h2>
+                <h3 class="movie-details_date">{{ movieDate }}</h3>
+                <ul class="movie-details_genres" v-for="genre in movieGenres">
+                    <li class="movie-details_genres-item">{{ genre }}</li>
                     <li class="movie-details_genres-item">Adventure</li>
                     <li class="movie-details_genres-item">Western</li>
                 </ul>
-                <p class="movie-details_synopsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, pariatur?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis repellat odit eligendi minus enim tenetur.</p>
+                <p class="movie-details_synopsis">{{ movieSynopsis }}</p>
             </div>
         </article>
 </template>
+<script lang="ts">
+    export default {
+        props: ['movieTitle', 'movieDirector', 'movieDate', 'movieSynopsis', 'movieGenres']
+    }
+</script>
