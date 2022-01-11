@@ -5,9 +5,12 @@
             <img src="../assets/check-green.svg" alt="" class="heading-icon">
         </h1>
         <main class="movie-list">
-            <MovieDetails />
-            <MovieDetails />
-            <MovieDetails />
+            <MovieDetails :movieTitle="this.movie.movieTitle"
+                :movieDirector="this.movie.movieDirector"
+                :movieDate="this.movie.movieDate"
+                :movieSynopsis="this.movie.movieSynopsis"
+                :movieGenres="this.movie.movieGenres"
+             />
         </main>
     </section>
 </template>
@@ -16,7 +19,11 @@
     import MovieDetails from './MovieDetails.vue';
 
     export default {
+        props: ['movie'],
         components: { MovieDetails },
-        name: 'Movies'
+        name: 'Movies',
+        mounted() {
+            // console.log(this.movie);
+        }
     }
 </script>
