@@ -1,6 +1,5 @@
 .shopping-cart {
     background-color: $msb;
-    padding: 1.25em;
     color: $fff;
     position: absolute;
     height: 100%;
@@ -9,6 +8,18 @@
     box-shadow: -5px 2px 8px #242424;
     transform: translateY(-110%);
     transition: all 250ms ease;
+    display: flex;
+
+    &_wrapper {
+        width: 70%;
+    }
+
+    &_title {
+        margin: 1.25em;
+        border-bottom: 2px solid;
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 .shopping-cart_fall {
