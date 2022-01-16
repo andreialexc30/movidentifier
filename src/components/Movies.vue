@@ -10,6 +10,9 @@
                 :movieDate="this.movie.movieDate"
                 :movieSynopsis="this.movie.movieSynopsis"
                 :movieGenres="this.movie.movieGenres"
+                :base_url="this.img.base_url"
+                :size="this.img.size"
+                :file_path="this.img.file_path"
              />
         </main>
     </section>
@@ -19,11 +22,8 @@
     import MovieDetails from './MovieDetails.vue';
 
     export default {
-        props: ['movie'],
+        props: ['movie', 'img'],
         components: { MovieDetails },
-        name: 'Movies',
-        mounted() {
-            // console.log(this.movie);
-        }
+        name: 'Movies'
     }
 </script>
