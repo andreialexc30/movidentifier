@@ -1,8 +1,7 @@
 <template>
         <article class="movie-list_info">
             <div class="movie-art">
-                <!-- TODO: Movie picture -->
-                <img src="../assets/temp.jpg" alt="movie" class="movie-art_img">
+                <img :src="base_url+size+file_path" alt="movie" class="movie-art_img">
                 <div class="movie-art_controls">
                     <button class="movie-art_controls-btn">
                         <img src="../assets/watchlater.svg" alt="" class="control-btn_icon">
@@ -16,10 +15,7 @@
                 <h1 class="movie-details_title">{{ movieTitle }}</h1>
                 <h2 class="movie-details_director">{{ movieDirector }}</h2>
                 <h3 class="movie-details_date">{{ movieDate }}</h3>
-                <ul class="movie-details_genres" v-for="genre in movieGenres">
-                    <li class="movie-details_genres-item">{{ genre }}</li>
-                    <li class="movie-details_genres-item">Adventure</li>
-                    <li class="movie-details_genres-item">Western</li>
+                <ul class="movie-details_genres">
                 </ul>
                 <p class="movie-details_synopsis">{{ movieSynopsis }}</p>
             </div>
@@ -27,6 +23,18 @@
 </template>
 <script lang="ts">
     export default {
-        props: ['movieTitle', 'movieDirector', 'movieDate', 'movieSynopsis', 'movieGenres']
+        props: [
+            'movieTitle',
+            'movieDirector',
+            'movieDate',
+            'movieSynopsis',
+            'movieGenres',
+            'base_url',
+            'size',
+            'file_path'
+        ],
+        methods: {
+            // TBA
+        }
     }
 </script>
