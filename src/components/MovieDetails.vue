@@ -1,7 +1,7 @@
 <template>
-        <article class="movie-list_info">
+        <article class="movie-list_info" v-for="movieObject in fetchedMovies">
             <div class="movie-art">
-                <img :src="base_url+size+file_path" alt="movie" class="movie-art_img">
+                <img :src="movieObject.poster" alt="movie" class="movie-art_img">
                 <div class="movie-art_controls">
                     <button class="movie-art_controls-btn">
                         <img src="../assets/watchlater.svg" alt="" class="control-btn_icon">
@@ -12,29 +12,21 @@
                 </div>
             </div>
             <div class="movie-details">
-                <h1 class="movie-details_title">{{ movieTitle }}</h1>
-                <h2 class="movie-details_director">{{ movieDirector }}</h2>
-                <h3 class="movie-details_date">{{ movieDate }}</h3>
+                <h1 class="movie-details_title">{{ movieObject.title }}</h1>
+                <h2 class="movie-details_director">{{ movieObject.director }}</h2>
+                <h3 class="movie-details_date">{{ movieObject.release }}</h3>
                 <ul class="movie-details_genres">
+                    <li class="movie-details_genres-item" v-for="genre in movieObject.genres" :key="genre.name">{{ genre.name }}</li>
                 </ul>
-                <p class="movie-details_synopsis">{{ movieSynopsis }}</p>
+                <p class="movie-details_synopsis">{{ movieObject.synopsis }}</p>
             </div>
         </article>
 </template>
 <script lang="ts">
     export default {
         props: [
-            'movieTitle',
-            'movieDirector',
-            'movieDate',
-            'movieSynopsis',
-            'movieGenres',
-            'base_url',
-            'size',
-            'file_path'
+            'fetchedMovies',
+            'movie_id'
         ],
-        methods: {
-            // TBA
-        }
     }
 </script>
