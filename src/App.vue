@@ -19,8 +19,9 @@
     <!-- Search for movies -->
       <SearchQuery :searchMovie="searchMovie" />
   </section>
-  <Movies :movie="movie"
-    :img="img"
+  <Movies :fetchedMovies="fetchedMovies"
+    :movie_id="movie_id"
+    :foundMovie="foundMovie"
   />
   <!-- <router-view/> -->
 </template>
