@@ -1,11 +1,13 @@
 .shopping-cart_details {
     margin: 1.25em;
+    overflow: hidden;
 
     .movie-in-cart {
         display: flex;
         padding: 1.25em;
 
         &_img {
+            max-width: 500px;
             width: 100%;
             height: auto;
 
@@ -17,6 +19,17 @@
 
         &_details {
             padding: 0 2.5em;
+        }
+
+        &_removeBtn {
+            height: 10vh;
+            background-color: #f94444;
+            border: none;
+            border-radius: 5px;
+            text-transform: uppercase;
+            color: $fff;
+            align-self: center;
+            cursor: pointer;
         }
     }
 

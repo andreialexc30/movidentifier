@@ -19,7 +19,10 @@
     <!-- Search for movies -->
       <SearchQuery :searchMovie="searchMovie" />
   </section>
-  <Movies :movie="movie" />
+  <Movies :fetchedMovies="fetchedMovies"
+    :movie_id="movie_id"
+    :foundMovie="foundMovie"
+  />
   <!-- <router-view/> -->
 </template>
 
