@@ -22,10 +22,17 @@ export default {
                 cart?.classList.toggle('shopping-cart_fall');
             }, 250)
         },
-        searchMovie() {
+        searchMovie(event: any) {
+            if(event) {
+                event.preventDefault();
+            } else if(this.fetchedMovies.length === 10 && this.movie_id.length === 10) {
+                this.fetchedMovies = new Array();
+                this.movie_id = new Array();
+            }
+
             const getQuery = (<HTMLInputElement>document.querySelector('.searchQuery_input')).value;
             const queryEndpoint = `https://api.themoviedb.org/3/search/movie?api_key=${this.API_KEY}&query=${getQuery}`;
-
+            console.log(getQuery)
             fetch(queryEndpoint)
                 .then((response) => {
                     if(!response.ok) {
@@ -38,10 +45,9 @@ export default {
                     for(let i = 0; i < queryData.results.length; i++) {
                         if(this.movie_id.length < 10) {
                             this.movie_id.push(queryData.results[i].id)
-                        } return this.movie_id = [];
+                        }
                     }
                     this.displayMovie();
-                    console.log(this.fetchedMovies)
                 }).catch((error) => {
                     console.error('Ther was an error fetching the data', error);
                 })
@@ -57,20 +63,26 @@ export default {
 
                     return response.json();
                 }).then((movieData) => {
+                    let movieDetails = {
+                        id: id,
+                        title: movieData.title,
+                        alt: movieData.original_title,
+                        status: movieData.status,
+                        release: movieData.release_date,
+                        synopsis: movieData.overview,
+                        genres: movieData.genres,
+                        poster: 'https://image.tmdb.org/t' + '/p/w500' + movieData.poster_path
+                    }
+                    console.log(movieData)
+                    // console.log(movieDetails)
+                    // console.log(this.fetchedMovies, this.movie_id)
                     if(this.fetchedMovies.length < 10) {
-                        this.fetchedMovies.push({
-                            title: movieData.title,
-                            director: movieData.status,
-                            release: movieData.release_date,
-                            synopsis: movieData.overview,
-                            genres: movieData.genres,
-                            poster: 'https://image.tmdb.org/t' + '/p/w500' + movieData.poster_path
-                        })
-                    } return this.fetchedMovies = [];
+                        this.fetchedMovies.push(movieDetails)
+                    }
                 }).catch((error) => {
                     console.error('There was an error fetching your data', error);
                 })
             })
-        }
+        },
     }
 }
