@@ -2,9 +2,9 @@
     <form class="searchQuery_form">
         <div class="searchQuery_form-wrapper">
             <input class="searchQuery_input" type="text" placeholder="Type your movie here" />
-            <button class="input-submit_btn" @click="searchMovie()">Search</button>
+            <button class="input-submit_btn" @click.prevent="searchMovie()">Search</button>
         </div>
-        <Filters />
+        <Filters :fetchedMovies="fetchedMovies" />
     </form>
 </template>
 
@@ -13,7 +13,7 @@
     import Movies from './Movies.vue';
 
     export default {
-        props: ['searchMovie'],
+        props: ['searchMovie', 'fetchedMovies'],
         components: { Filters, Movies },
         name: 'SearchQuery'
     }
