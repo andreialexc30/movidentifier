@@ -1,24 +1,42 @@
-// Categories dropdown
-@media screen and (min-width: 300px) and (max-width: 400px) {
-    .searchQuery_Filters-categories {
-        display: none !important;
+// Body
+@media screen and (min-width: 300px) and (max-width: 600px) {
+    body {
+        width: 90vw !important;
+    }
+}
+
+// Header
+@media screen and (min-width: 300px) and (max-width: 600px) {
+    .section-heading {
+        font-size: 2rem !important;
+        margin: 0em .5em 0em .5em !important;
     }
 
-    .mobile-category_dropdown {
-        display: flex !important;
+    .heading-icon {
+        width: 30px !important;
     }
 
-    .dropdown_list-toggle {
-        display: flex !important;
+    .section-subheading {
+        font-size: 1.2rem !important;
+        margin: 0em .0em 0em .8em !important;
+    }
+}
+
+// Search query
+@media screen and (min-width: 300px) and (max-width: 800px) {
+    .searchQuery_form-wrapper {
         flex-direction: column;
-        grid-gap: .15em;
     }
 
-    .Mobile-categories--pill {
-        opacity: 0;
+    .input-submit_btn {
+        width: 25vw !important;
+        margin: 1.5em 0;
     }
+}
 
-    .Mobile-categories--pill_unhide {
-        opacity: 1 !important;
+// Movie details
+@media screen and (min-width: 300px) and (max-width: 600px) {
+    .movieDetails-heading {
+        font-size: 1.25rem;
     }
 }
