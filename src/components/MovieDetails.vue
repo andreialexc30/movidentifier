@@ -6,7 +6,7 @@
                     <button class="movie-art_controls-btn" title="Add to Watch Later">
                         <img src="../assets/watchlater.svg" alt="" class="control-btn_icon">
                     </button>
-                    <button class="movie-art_controls-btn" title="Add to Cart">
+                    <button @click.capture="addToCart()" class="movie-art_controls-btn" title="Add to Cart">
                         <img src="../assets/plus-circle.svg" alt="" class="control-btn_icon">
                     </button>
                 </div>
@@ -28,5 +28,12 @@
             'fetchedMovies',
             'movie_id'
         ],
+        data() {
+            return {
+                cart: []
+            }
+        },
+        methods: {
+        }
     }
 </script>
