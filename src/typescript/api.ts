@@ -22,10 +22,8 @@ export default {
                 cart?.classList.toggle('shopping-cart_fall');
             }, 250)
         },
-        searchMovie(event: any) {
-            if(event) {
-                event.preventDefault();
-            } else if(this.fetchedMovies.length === 10 && this.movie_id.length === 10) {
+        searchMovie() {
+            if(this.fetchedMovies.length === 10 && this.movie_id.length === 10) {
                 this.fetchedMovies = new Array();
                 this.movie_id = new Array();
             }
@@ -73,9 +71,7 @@ export default {
                         genres: movieData.genres,
                         poster: 'https://image.tmdb.org/t' + '/p/w500' + movieData.poster_path
                     }
-                    console.log(movieData)
-                    // console.log(movieDetails)
-                    // console.log(this.fetchedMovies, this.movie_id)
+
                     if(this.fetchedMovies.length < 10) {
                         this.fetchedMovies.push(movieDetails)
                     }
