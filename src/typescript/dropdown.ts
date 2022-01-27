@@ -1,4 +1,18 @@
 export default {
+    props: ['fetchedMovies'],
+    data() {
+        return {}
+    },
+    mounted() {
+        const buttons = document.querySelectorAll('.Filters-categories--pill');
+        buttons.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                console.log(btn)
+                let btnName = 'Action'
+                this.getMovieGenre(btnName)
+            })
+        })
+    },
     methods: {
         toggleDropdown() {
             const dropdown = document.querySelector('.dropdown_list');
@@ -14,6 +28,19 @@ export default {
                         categoryBtn[i].classList.add('Mobile-categories--pill_unhide')
                     }, 900 + multiplied)
                 }
+            }
+        },
+        getMovieGenre(genre: string) {
+            // console.log(this.fetchedMovies[0])
+            for(let i = 0; i < this.fetchedMovies.length; i++) {
+                let currentMovie = this.fetchedMovies[i]
+
+                currentMovie.genres.forEach((genreObj: Object) => {
+                    if(Object.values(genreObj).includes(genre)) {
+                        this.fetchedMovies = new Array();
+                        this.fetchedMovies.push(currentMovie)
+                    }
+                })
             }
         }
     }
