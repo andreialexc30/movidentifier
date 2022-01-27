@@ -17,7 +17,8 @@
       </button>
     </header>
     <!-- Search for movies -->
-      <SearchQuery :searchMovie="searchMovie" />
+      <SearchQuery :searchMovie="searchMovie"
+      :fetchedMovies="fetchedMovies" />
   </section>
   <Movies :fetchedMovies="fetchedMovies"
     :movie_id="movie_id"
