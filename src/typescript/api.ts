@@ -14,6 +14,9 @@ export default {
             movie_id: []
         }
     },
+    mounted() {
+        this.filterByGenre()
+    },
     methods: {
         toggleCartDisplay() {
                 this.toggleCart = !this.toggleCart
@@ -28,9 +31,8 @@ export default {
                 this.movie_id = new Array();
             }
 
-            const getQuery = (<HTMLInputElement>document.querySelector('.searchQuery_input')).value;
+            const getQuery = (<HTMLInputElement>document.querySelector('.searchQuery_input')).value.trim().toLowerCase();
             const queryEndpoint = `https://api.themoviedb.org/3/search/movie?api_key=${this.API_KEY}&query=${getQuery}`;
-            console.log(getQuery)
             fetch(queryEndpoint)
                 .then((response) => {
                     if(!response.ok) {
@@ -72,6 +74,8 @@ export default {
                         poster: 'https://image.tmdb.org/t' + '/p/w500' + movieData.poster_path
                     }
 
+                    console.log(this.fetchedMovies)
+
                     if(this.fetchedMovies.length < 10) {
                         this.fetchedMovies.push(movieDetails)
                     }
@@ -80,5 +84,30 @@ export default {
                 })
             })
         },
+        sortMovie() {
+            this.fetchedMovies.sort((a: any, b: any) => {
+                return a.title.localeCompare(b.title)
+            })
+        },
+        filterByGenre() {
+            const selectList = (<HTMLSelectElement>document.getElementById('genres'))
+            for(let i = 0; i < selectList.length; i++) {
+                let option = selectList[i] as HTMLOptionElement
+
+                if(option.selected) {
+                    console.log(option.value)
+                    this.fetchedMovies.forEach((movie: any) => {
+                        movie.genres.forEach((genre: any) => {
+                            if(option.value === genre.name) {
+                                // console.log('helo world')
+                                // this.fetchedMovies = new Array();
+                                // this.fetchedMovies.push(movie)
+                                // try array.filter
+                            }
+                        })
+                    })
+                }
+            }
+        }
     }
 }
