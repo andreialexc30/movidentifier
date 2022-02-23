@@ -18,7 +18,9 @@
     </header>
     <!-- Search for movies -->
       <SearchQuery :searchMovie="searchMovie"
-      :fetchedMovies="fetchedMovies" />
+      :fetchedMovies="fetchedMovies"
+      :sortMovie="sortMovie"
+      :filterByGenre="filterByGenre" />
   </section>
   <Movies :fetchedMovies="fetchedMovies"
     :movie_id="movie_id"
