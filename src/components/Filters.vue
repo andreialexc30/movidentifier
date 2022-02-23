@@ -1,25 +1,28 @@
 <template>
     <div class="searchQuery_Filters-categories">
-        <button class="Filters-categories--pill category-All">All</button>
-        <button class="Filters-categories--pill category-Action">Action</button>
-        <button class="Filters-categories--pill category-Adventure">Adventure</button>
-        <button class="Filters-categories--pill category-Animation">Animation</button>
-        <button class="Filters-categories--pill category-Comedy">Comedy</button>
-        <button class="Filters-categories--pill category-Crime">Crime</button>
-        <button class="Filters-categories--pill category-Documentary">Documentary</button>
-        <button class="Filters-categories--pill category-Drama">Drama</button>
-        <button class="Filters-categories--pill category-Family">Family</button>
-        <button class="Filters-categories--pill category-Fantasy">Fantasy</button>
-        <button class="Filters-categories--pill category-History">History</button>
-        <button class="Filters-categories--pill category-Horror">Horror</button>
-        <button class="Filters-categories--pill category-Music">Music</button>
-        <button class="Filters-categories--pill category-Mystery">Mystery</button>
-        <button class="Filters-categories--pill category-Romance">Romance</button>
-        <button class="Filters-categories--pill category-ScienceFiction">Science-Fiction</button>
-        <button class="Filters-categories--pill category-Thriller">Thriller</button>
-        <button class="Filters-categories--pill category-TVMovie">TV Movie</button>
-        <button class="Filters-categories--pill category-War">War</button>
-        <button class="Filters-categories--pill category-Western">Western</button>
+        <button id="sortBtn" @click="sortMovie()" class="sortMoviesBtn">Sort: A-Z</button>
+        <select name="Genres" id="genres" class="genresFilter" @click="filterByGenre()">
+            <option value="All">All</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Animation">Animation</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Crime">Crime</option>
+            <option value="Documentary">Documentary</option>
+            <option value="Drama">Drama</option>
+            <option value="Family">Family</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="History">History</option>
+            <option value="Horror">Horror</option>
+            <option value="Music">Music</option>
+            <option value="Mystery">Mystery</option>
+            <option value="Romance">Romance</option>
+            <option value="ScienceFiction">ScienceFiction</option>
+            <option value="Thriller">Thriller</option>
+            <option value="TVMovie">TVMovie</option>
+            <option value="War">War</option>
+            <option value="Western">Western</option>
+        </select>
     </div>
 </template>
 <script src="../typescript/dropdown.ts"></script>
