@@ -1,17 +1,21 @@
 .searchQuery_Filters-categories {
     display: flex;
-    justify-content: center;
+    grid-gap: 1.5em;
     flex-wrap: wrap;
 
-    .Filters-categories--pill {
-        color: $fff;
-        border-radius: 90px;
+    .sortMoviesBtn {
         border: none;
-        background-color: $msb;
-        padding: .5em;
-        margin: .15em;
-        width: 90px;
+        padding: .75em;
+        letter-spacing: .5px;
+        background: $dsb;
+        color: $fff;
         cursor: pointer;
-        transition: all 185ms ease-in-out;
+    }
+
+    .genresFilter {
+        background: $dsb;
+        border: none;
+        padding-left: .5em;
+        color: $fff;
     }
 }
