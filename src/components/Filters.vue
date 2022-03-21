@@ -1,6 +1,6 @@
 <template>
     <div class="searchQuery_Filters-categories">
-        <button id="sortBtn" @click="sortMovie()" class="sortMoviesBtn">Sort: A-Z</button>
+        <button type="button" id="sortBtn" @click="sortMovie()" class="sortMoviesBtn">Sort: A-Z</button>
         <select name="Genres" id="genres" class="genresFilter" @click="filterByGenre()">
             <option value="All">All</option>
             <option value="Action">Action</option>
@@ -23,6 +23,7 @@
             <option value="War">War</option>
             <option value="Western">Western</option>
         </select>
+        <router-link to="/watch-list" class="toWatchLater">Watch List</router-link>
     </div>
 </template>
 <script src="../typescript/dropdown.ts"></script>
