@@ -74,8 +74,6 @@ export default {
                         poster: 'https://image.tmdb.org/t' + '/p/w500' + movieData.poster_path
                     }
 
-                    console.log(this.fetchedMovies)
-
                     if(this.fetchedMovies.length < 10) {
                         this.fetchedMovies.push(movieDetails)
                     }
@@ -95,17 +93,17 @@ export default {
                 let option = selectList[i] as HTMLOptionElement
 
                 if(option.selected) {
-                    console.log(option.value)
-                    this.fetchedMovies.forEach((movie: any) => {
-                        movie.genres.forEach((genre: any) => {
-                            if(option.value === genre.name) {
-                                // console.log('helo world')
-                                // this.fetchedMovies = new Array();
-                                // this.fetchedMovies.push(movie)
-                                // try array.filter
-                            }
+                    if(this.fetchedMovies.length > 1) {
+                        this.fetchedMovies.forEach((movieObj: any) => {
+                            movieObj.genres.forEach((genre: any) => {
+                                this.fetchedMovies.filter((movieObj: any) => {
+                                    if(genre.name === option.value) {
+                                        return movieObj
+                                    }
+                                })
+                            })
                         })
-                    })
+                    }
                 }
             }
         }
