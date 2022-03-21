@@ -17,5 +17,15 @@
         border: none;
         padding-left: .5em;
         color: $fff;
+        cursor: pointer;
+    }
+
+    .toWatchLater {
+        background: $dsb;
+        color: $fff;
+        text-decoration: none;
+        padding: 0 .5em;
+        display: grid;
+        place-items: center;
     }
 }
