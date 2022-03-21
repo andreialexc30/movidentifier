@@ -14,6 +14,9 @@ export default {
             movie_id: []
         }
     },
+    mounted() {
+        this.filterByGenre()
+    },
     methods: {
         toggleCartDisplay() {
                 this.toggleCart = !this.toggleCart
@@ -22,17 +25,14 @@ export default {
                 cart?.classList.toggle('shopping-cart_fall');
             }, 250)
         },
-        searchMovie(event: any) {
-            if(event) {
-                event.preventDefault();
-            } else if(this.fetchedMovies.length === 10 && this.movie_id.length === 10) {
+        searchMovie() {
+            if(this.fetchedMovies.length === 10 && this.movie_id.length === 10) {
                 this.fetchedMovies = new Array();
                 this.movie_id = new Array();
             }
 
-            const getQuery = (<HTMLInputElement>document.querySelector('.searchQuery_input')).value;
+            const getQuery = (<HTMLInputElement>document.querySelector('.searchQuery_input')).value.trim().toLowerCase();
             const queryEndpoint = `https://api.themoviedb.org/3/search/movie?api_key=${this.API_KEY}&query=${getQuery}`;
-            console.log(getQuery)
             fetch(queryEndpoint)
                 .then((response) => {
                     if(!response.ok) {
@@ -73,9 +73,7 @@ export default {
                         genres: movieData.genres,
                         poster: 'https://image.tmdb.org/t' + '/p/w500' + movieData.poster_path
                     }
-                    console.log(movieData)
-                    // console.log(movieDetails)
-                    // console.log(this.fetchedMovies, this.movie_id)
+
                     if(this.fetchedMovies.length < 10) {
                         this.fetchedMovies.push(movieDetails)
                     }
@@ -84,5 +82,30 @@ export default {
                 })
             })
         },
+        sortMovie() {
+            this.fetchedMovies.sort((a: any, b: any) => {
+                return a.title.localeCompare(b.title)
+            })
+        },
+        filterByGenre() {
+            const selectList = (<HTMLSelectElement>document.getElementById('genres'))
+            for(let i = 0; i < selectList.length; i++) {
+                let option = selectList[i] as HTMLOptionElement
+
+                if(option.selected) {
+                    if(this.fetchedMovies.length > 1) {
+                        this.fetchedMovies.forEach((movieObj: any) => {
+                            movieObj.genres.forEach((genre: any) => {
+                                this.fetchedMovies.filter((movieObj: any) => {
+                                    if(genre.name === option.value) {
+                                        return movieObj
+                                    }
+                                })
+                            })
+                        })
+                    }
+                }
+            }
+        }
     }
 }

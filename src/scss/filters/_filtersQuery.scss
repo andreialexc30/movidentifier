@@ -1,59 +1,31 @@
 .searchQuery_Filters-categories {
     display: flex;
-    justify-content: center;
+    grid-gap: 1.5em;
     flex-wrap: wrap;
 
-    .Filters-categories--pill {
-        color: $fff;
-        border-radius: 90px;
+    .sortMoviesBtn {
         border: none;
-        background-color: $msb;
-        padding: .5em;
-        margin: .15em;
-        width: 90px;
-        cursor: pointer;
-        transition: all 185ms ease-in-out;
-    }
-}
-
-// mobile
-.mobile-category_dropdown {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    display: none;
-
-    .dropdown_toggle {
-        margin: 2em;
-        padding: .5em;
-        background-color: $msb;
-        border: none;
-        border-radius: 45px;
-        width: 50vw;
-        cursor: pointer;
+        padding: .75em;
+        letter-spacing: .5px;
+        background: $dsb;
         color: $fff;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+        cursor: pointer;
     }
 
-    .dropdown_list {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        display: none;
+    .genresFilter {
+        background: $dsb;
+        border: none;
+        padding-left: .5em;
+        color: $fff;
+        cursor: pointer;
     }
 
-    .Mobile-categories--pill {
-        text-transform: uppercase;
-        letter-spacing: .85px;
+    .toWatchLater {
+        background: $dsb;
         color: $fff;
-        border-radius: 90px;
-        border: none;
-        background-color: $msb;
-        padding: .5em;
-        margin: .15em;
-        width: 32.5vw;
-        cursor: pointer;
-        transition: all 185ms ease-in-out;
+        text-decoration: none;
+        padding: 0 .5em;
+        display: grid;
+        place-items: center;
     }
 }
